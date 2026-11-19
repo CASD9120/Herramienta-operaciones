@@ -8714,5 +8714,28 @@ Clave       Descripción                                    P. Pza  M Cja.  Inte
     }
     window.onload = window.bootHerramentalApp;
   </script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBTDqsWH-LindEyC3b1AOagY9kq_S24SlQ",
+    authDomain: "herramienta-operaciones.firebaseapp.com",
+    projectId: "herramienta-operaciones",
+    storageBucket: "herramienta-operaciones.firebasestorage.app",
+    messagingSenderId: "960883149596",
+    appId: "1:960883149596:web:cd64f3864904000a5d88d9"
+  };
+
+  // Inicializar Firebase y la base de datos Firestore
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Dejar disponibles las herramientas de base de datos en toda tu página
+  window.db = db;
+  window.firestore = { collection, addDoc, getDocs, onSnapshot };
+
+  console.log("Firebase y Firestore conectados correctamente");
+</script>
 </body>
 </html>
